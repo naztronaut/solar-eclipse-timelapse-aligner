@@ -332,11 +332,12 @@ if __name__ == '__main__':
     start_time = time.time()
 
     # verify input directory
-    JPG_GLOB = '*.[jJ][pP][gG]'
+    #JPG_GLOB = '*.[jJ][pP][gG]'
+    JPG_GLOB = '*.[jJpP][pPnN][gGgG]'
     try:
         jpg_dir_path = verify_indir_path(args.input)
     except FileNotFoundError:
-        click.secho('ERROR: --input does not exist, please provide directory containing JPG files.', fg='red')
+        click.secho('ERROR: --input does not exist, please provide directory containing JPG or PNG files only.', fg='red')
         sys.exit(1)
     except NotADirectoryError:
         click.secho('ERROR: --input is a file, please provide directory containing JPG files.', fg='red')
@@ -346,7 +347,7 @@ if __name__ == '__main__':
     num_images = len(input_paths)
     if num_images == 0:
         click.secho(
-            'ERROR: --input does not have any JPG files, please provide directory containing JPG files.', fg='red'
+            'ERROR: --input does not have any JPG or PNG files, please provide directory containing JPGor PNG files.', fg='red'
         )
         sys.exit(1)
     click.secho(f'INFO: {num_images} images found in {jpg_dir_path}')
