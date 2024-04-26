@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['eclipse-aligner.py'],
-             pathex=['C:\\Users\\Hotdogee\\Dropbox\\Personal\\Projects\\github\\solar-eclipse-timelapse-aligner'],
+             pathex=[],
              binaries=[],
              datas=[],
              hiddenimports=['scipy.special.cython_special'],
